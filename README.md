@@ -19,4 +19,5 @@ nowDate.format('현재 시간 : %Y-%M-%D(%W) %H:%m:%S:%X', x=>x); // 현재 시�
 
 let newDate = DateJS('2023-02-17 03:01:07:969'); // 같음
 let DateJS.parse('17-02-2022 969:07:01:03','%D-%M-%Y %X:%S:%m:%Y') // 같음
+DateJS.parse('2023-03-01').isHoliday() // 3.1절 공휴일 true
 ```
