@@ -1,4 +1,4 @@
-class Datejs{
+class DateJS{
     constructor(date){
         this.date = date || new Date();
         this.years = this.date.getFullYear();
