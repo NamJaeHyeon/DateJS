@@ -65,9 +65,9 @@ class Datejs{
                     pointer2++;
                 }
             }
-            return new Datejs(new Date(`${Years}-${Months}-${Days} ${Hours}:${Minutes}:${Seconds}:${MilliSeconds}`));
+            return new DateJS(new Date(`${Years}-${Months}-${Days} ${Hours}:${Minutes}:${Seconds}:${MilliSeconds}`));
         } else {
-            return new Datejs(new Date(string));
+            return new DateJS(new Date(string));
         }
     }
     format(form, map){
