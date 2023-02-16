@@ -13,6 +13,22 @@ class DateJS{
     static monthName = ['Jan', 'Fab', 'Apr', 'Mar', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Oct', 'Nov', 'Dec'];
     static monthFullName = ['January', 'Fabuary', 'April', 'March', 'May', 'June', 'July', 'Agust', 'September', 'October', 'November', 'December']
     static week = "월화수목금토일";
+    static ThanksgivingDay = {
+        2023:[9, 28],
+        2024:[9, 16],
+        2025:[10, 5],
+        2026:[9, 24],
+        2027:[9, 14],
+        2028:[10, 2],
+    };
+    static NewYearHoliDay = {
+        2023:[1, 22],
+        2024:[2, 10],
+        2025:[1, 29],
+        2026:[2, 17],
+        2027:[2, 7],
+        2028:[1, 27],
+    }
     static parse(string, form){
         let Years = '2000';
         let Months = '01';
@@ -106,5 +122,33 @@ class DateJS{
         }
         return result;
     }
-    
+    isStaturday(){
+        if(this.week === 6) return true;
+        else return false;
+    }
+    isWeekday(){
+        if(this.week && (this.week < 6)) return true;
+        return false;
+    }
+    isHoliday(){
+        let holiday = [
+            [1, 1],
+            [3, 1],
+            [4, 8],
+            [5, 5],
+            [6, 6],
+            [8, 15],
+            [10, 3],
+            [10, 9],
+            [12, 25]
+        ];
+        let newYear = DateJS.NewYearHoliDay[this.years]
+        holiday.push(newYear);
+        holiday.push([newYear[0], newYear[1]+1]);
+        let thanksDay = DateJS.ThanksgivingDay[this.years];
+        holiday.push(thanksDay);
+        holiday.push([thanksDay[0], thanksDay[1]+1]);
+        holiday.push([thanksDay[0], thanksDay[1]+2]);
+        return holiday.some(x => x[0] === this.months && x[1] === this.days);
+    }
 }
