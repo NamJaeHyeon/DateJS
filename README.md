@@ -1,8 +1,8 @@
 # DateJS
 new date class including format
 
-이 코드의 차별점!    
-*공휴일 판정 메서드*
+**이 코드의 차별점!**    
+- **공휴일 판정 메서드**
 
 
 ```
